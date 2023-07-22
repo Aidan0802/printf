@@ -21,19 +21,27 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 'c')
+			{
 				_putchar(va_arg(args, int));
+			}
 
 			else if (format[i] == 's')
 			{
 				str = va_arg(args, char *);
 				for (j = 0; str[j]; j++)
+				{
 					_putchar(str[j]);
+					count++;
+				}
 			}
 		}
 		else
+		{
 			_putchar(format[i]);
+			count++;
+		}
 	}
-
+	va_end(args);
 	return (count);
 }
 
