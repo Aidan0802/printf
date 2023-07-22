@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, count = 0;
+	int i, j, n, count = 0;
 	char *str;
 	va_list args;
 
@@ -28,8 +28,11 @@ int _printf(const char *format, ...)
 				for (j = 0; str[j]; j++)
 					_putchar(str[j]), count++;
 			}
-		}
-		_putchar(format[i]), count++;
+			else if (format[i + 1] == '%')
+				_putchar('%');
+		} i++;
+		if (format[i - 1] != '%')
+			_putchar(format[i]), count++;
 	}
 	return (count);
 }
