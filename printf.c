@@ -5,7 +5,6 @@
  *
  * @format: format characters
  *
- * Return: void
  */
 
 int _printf(const char *format, ...)
@@ -16,7 +15,6 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || format[0] == '%')
 		return (-1);
-	
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
@@ -27,14 +25,17 @@ int _printf(const char *format, ...)
 			else if (format[i + 1] == 's')
 			{
 				str = va_arg(args, char *);
-				
 				for (j = 0; str[j]; j++)
 					_putchar(str[j]), count++;
 			}
-			else
-				_putchar(format[i]), count++;
-		}else
-			_putchar(format[i]), count++;
+			else if (format[i + 1] == 'i' || format[i + 1] == 'd')
+			{
+				n = va_arg(args, int);
+				print_num(n);
+				i++; continue;
+			}
+		}
+		_putchar(format[i]), count++;
 	}
 	return (count);
 }
@@ -62,7 +63,10 @@ int _putchar(int c)
 void print_num(int n)
 {
 	if (n < 0)
+	{
 		_putchar('-');
+		n = -n;
+	}
 	if (n / 10)
 		print_num(n / 10);
 	_putchar(n % 10 + '0');
