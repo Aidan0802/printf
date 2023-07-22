@@ -1,67 +1,64 @@
 #include "main.h"
 
 /**
- * _printf - prints output according to format
+ * _printf - prints format
  *
- * @format: format that is printed out
+ * @format: format characters
  *
- * Return: The number of characters printed
  */
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, j, count = 0;
+	int i, j, count = 0;
 	char *str;
 	va_list args;
 
-	if (format == NULL)
+	if (format == NULL || format[0] == '%')
 		return (-1);
-
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			if (format[i] == 'c')
-			{
-				_putchar(va_arg(args, int));
-			}
-
-			else if (format[i] == 's')
+			if (format[i + 1] == 'c')
+				_putchar(va_arg(args, int)), count++;
+			else if (format[i + 1] == 's')
 			{
 				str = va_arg(args, char *);
 				for (j = 0; str[j]; j++)
-				{
-					_putchar(str[j]);
-					count++;
-				}
+					_putchar(str[j]), count++;
 			}
-			else if (format[i] == '%')
-				_putchar('%');
-			else if (!format[i])
-				return (-1);
 		}
-		else
-		{
-			_putchar(format[i]);
-			count++;
-		}
+		_putchar(format[i]), count++;
 	}
-	va_end(args);
 	return (count);
 }
-
 /**
- * _putchar - prints a single char
+ * _putchar - prints a single character
  *
- * @c: char input
+ * @c: character to be printed
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: 0 on success, 1 otherwise
  */
 
 int _putchar(int c)
 {
 	return (write(1, &c, 1));
+}
+
+/**
+ * print_num - prints a number
+ *
+ * @n: number input
+ *
+ * Return: void
+ */
+
+void print_num(int n)
+{
+	if (n < 0)
+		_putchar('-');
+	if (n / 10)
+		print_num(n / 10);
+	_putchar(n % 10 + '0');
 }
