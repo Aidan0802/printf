@@ -14,6 +14,9 @@ int _printf(const char *format, ...)
 	char *str;
 	va_list args;
 
+	if (!format)
+		return (-1);
+
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
@@ -41,7 +44,7 @@ int _printf(const char *format, ...)
 			count++;
 		}
 	}
-
+	va_end(args);
 	return (count);
 }
 
