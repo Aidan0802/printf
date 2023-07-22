@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || format[0] == '%')
 		return (-1);
+	
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
@@ -26,6 +27,7 @@ int _printf(const char *format, ...)
 			else if (format[i + 1] == 's')
 			{
 				str = va_arg(args, char *);
+				
 				for (j = 0; str[j]; j++)
 					_putchar(str[j]), count++;
 			}
