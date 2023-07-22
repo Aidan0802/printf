@@ -4,7 +4,7 @@
  * _printf - prints format
  *
  * @format: format characters
- * 
+ *
  * Return: void
  */
 
