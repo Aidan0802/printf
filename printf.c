@@ -29,10 +29,10 @@ int _printf(const char *format, ...)
 				for (j = 0; str[j]; j++)
 					_putchar(str[j]), count++;
 			}
-			else if (format[i + 1] == '%')
-				_putchar('%');
-		}
-		_putchar(format[i]), count++;
+			else
+				_putchar(format[i]), count++;
+		}else
+			_putchar(format[i]), count++;
 	}
 	return (count);
 }
