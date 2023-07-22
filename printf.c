@@ -4,7 +4,8 @@
  * _printf - prints format
  *
  * @format: format characters
- *
+ * 
+ * Return: void
  */
 
 int _printf(const char *format, ...)
