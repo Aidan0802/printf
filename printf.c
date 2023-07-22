@@ -4,8 +4,8 @@
  * _printf - prints format
  *
  * @format: format characters
- * 
- * Return: number of char printed 
+ *
+ * Return: number of char printed
  * otherwise -1
  */
 
@@ -15,8 +15,10 @@ int _printf(const char *format, ...)
 	char *str;
 	va_list args;
 
-	if (format == NULL || format[0] == '%')
+	if (!format|| format[0] == '%')
 		return (-1);
+	if (!format[0])
+		return (0);
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
@@ -34,7 +36,8 @@ int _printf(const char *format, ...)
 			{
 				n = va_arg(args, int);
 				print_num(n);
-				i++; continue;
+				i++;
+				continue;
 			}
 		}
 		_putchar(format[i]), count++;
