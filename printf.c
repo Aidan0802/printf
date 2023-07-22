@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == '%')
 				_putchar('%');
-			else if (format[i] == ' ')
+			else if (!format[i])
 				return (-1);
 		}
 		else
