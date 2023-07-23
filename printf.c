@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - prints format
  *
@@ -18,8 +17,6 @@ int _printf(const char *format, ...)
 
 	if (!format || format[0] == '%')
 		return (-1);
-	if (!format[0])
-		return (0);
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
@@ -49,16 +46,6 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] == '%')
 				continue;
-			else if (format[i + 1] == 'u')
-			{
-				m = va_arg(args, unsigned int);
-				x = (unsigned int)m;
-				_putchar(x), i += 2;
-			}
-			else if (format[i + 1] == 'p')
-			{
-				d = va_arg(args, int);
-				write(1, &d, 4);
 			}
 		}
 		_putchar(format[i]), count++;
