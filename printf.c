@@ -11,7 +11,8 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, n, count = 0;
+	int i, d, j, n, count = 0, m;
+	unsigned int x;
 	char *str;
 	va_list args;
 
@@ -25,12 +26,19 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == 'c')
-				_putchar(va_arg(args, int)), count++;
+			{
+				_putchar(va_arg(args, int)), count++, i++;
+				continue;
+			}
 			else if (format[i + 1] == 's')
 			{
 				str = va_arg(args, char *);
 				for (j = 0; str[j]; j++)
+				{
 					_putchar(str[j]), count++;
+					i += 2;
+					continue;
+				}
 			}
 			else if (format[i + 1] == 'i' || format[i + 1] == 'd')
 			{
@@ -39,41 +47,22 @@ int _printf(const char *format, ...)
 				i++;
 				continue;
 			}
+			else if (format[i + 1] == '%')
+				continue;
+			else if (format[i + 1] == 'u')
+			{
+				m = va_arg(args, unsigned int);
+				x = (unsigned int)m;
+				_putchar(x), i += 2;
+			}
+			else if (format[i + 1] == 'p')
+			{
+				d = va_arg(args, int);
+				write(1, &d, 4);
+			}
 		}
 		_putchar(format[i]), count++;
 	}
 	va_end(args);
 	return (count);
-}
-/**
- * _putchar - prints a single character
- *
- * @c: character to be printed
- *
- * Return: 0 on success, 1 otherwise
- */
-
-int _putchar(int c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
- * print_num - prints a number
- *
- * @n: number input
- *
- * Return: void
- */
-
-void print_num(int n)
-{
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-	}
-	if (n / 10)
-		print_num(n / 10);
-	_putchar(n % 10 + '0');
 }
