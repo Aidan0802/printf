@@ -10,8 +10,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, d, j, n, count = 0, m;
-	unsigned int x;
+	int i, j, n, count = 0;
 	char *str;
 	va_list args;
 
@@ -46,7 +45,6 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] == '%')
 				continue;
-			}
 		}
 		_putchar(format[i]), count++;
 	}
