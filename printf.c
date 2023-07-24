@@ -10,45 +10,46 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, n, count = 0;
-	char *str;
+	int i, res, count = 0;
+	int (*speci)(va_list);
 	va_list args;
 
-	if (format == NULL || format[0] == '%')
+	if (format == NULL)
 		return (-1);
+	if (format[0] == '%' && format[1] == ' ')
+		return (-1);
+
 	va_start(args, format);
 	for (i = 0; format[i]; i++)
 	{
-		if (format[i] != '%')
-			_putchar(format[i]), count++;
-		else
+		if (format[i] == '%')
 		{
-			if (format[i + 1] == 'c')
+			speci = get_spes(format, i + 1);
+			if (speci)
 			{
-				_putchar(va_arg(args, int)), count++, i++;
-				continue;
+				i += 2;
+				res = speci(args);
+				count += res;
 			}
-			else if (format[i + 1] == 's')
-			{
-				str = va_arg(args, char *);
-				for (j = 0; str[j]; j++)
-				{
-					_putchar(str[j]), count++;
-					i += 2;
-					continue;
-				}
-			}
-			else if (format[i + 1] == 'i' || format[i + 1] == 'd')
-			{
-				n = va_arg(args, int);
-				print_num(n);
-				i++;
-				continue;
-			}
-			else if (format[i + 1] == '%')
-				continue;
 		}
+		_putchar(format[i]), count++;
 	}
 	va_end(args);
 	return (count);
+}
+
+/**
+ * _perc - prints percentage
+ *
+ * Return: number of char printed
+ */
+
+int _perc(va_list args)
+{
+	char c = va_arg(args, int);
+
+	if (c == '\0')
+		return (0);
+	_putchar('%');
+	return (1);
 }
