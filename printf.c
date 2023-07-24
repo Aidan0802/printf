@@ -3,6 +3,7 @@
  * _printf - prints format
  *
  * @format: format characters
+ * @...: multiple variables
  *
  * Return: number of char printed
  * otherwise -1
