@@ -5,7 +5,7 @@
 #include <unistd.h>
 
 /**
- * struct sp - structures specifiers
+ * struct format - structures specifiers
  *
  * @choice: different specifiers
  * @f: function pointer
@@ -15,7 +15,7 @@
 typedef struct format
 {
 	char *choice;
-	int (*f)(va_list args);
+	int (*f)();
 } select;
 
 
