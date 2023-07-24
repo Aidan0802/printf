@@ -12,7 +12,8 @@ void print_un(int n);
 
 int un_int(va_list args)
 {
-	unsigned num, count = 0;
+	unsigned int num;
+	int count = 0;
 	int n = va_arg(args, int);
 
 	if (n < 0)
@@ -22,12 +23,12 @@ int un_int(va_list args)
 		_putchar(num % 10 + 48);
 		count++;
 	}
-	return count++;
+	return (count);
 }
 
 /**
  * print_un - prints unsinged int
- * 
+ *
  * @n: integer
  * Return: void
  */

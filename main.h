@@ -5,6 +5,11 @@
 #include <unistd.h>
 #include <limits.h>
 
+/**
+ * struct op - specifier selecter
+ * @f: function pointer to function
+ */
+
 struct op
 {
 	char *choice;

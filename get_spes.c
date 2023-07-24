@@ -13,7 +13,6 @@
 int (*get_spes(const char *format, int index))(va_list args)
 {
 	int i;
-
 	struct op ops[] = {
 		{"s", _str}, {"i", int_print},
 		{"c", _c}, {"d", int_print},
