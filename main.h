@@ -12,7 +12,7 @@
  *
  */
 
-typedef struct sp
+typedef struct format
 {
 	char *choice;
 	int (*f)(va_list args);
