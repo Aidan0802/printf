@@ -1,19 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-/**
- * struct sp - structures specifiers
- *
- * @choice: different specifiers
- * @f: function pointer
- */
-
-typedef struct sp
-{
-	char *choice;
-	int (*f)(va_list args);
-} select;
 
 /**
  * get_spes - checks if spesifier exist
@@ -29,10 +14,10 @@ int (*get_spes(const char *format, int index))(va_list args)
 {
 	int i;
 
-	select ops[] = {
+	struct op ops[] = {
 		{"s", _str}, {"i", int_print},
 		{"c", _c}, {"d", int_print},
-		{"%", _perc},
+		{"%", _perc}, {"u", un_int},
 		{NULL, NULL},
 	};
 
