@@ -1,7 +1,5 @@
 #include "main.h"
 
-int get_int(int);
-
 /**
  * int_print - prints a number
  *

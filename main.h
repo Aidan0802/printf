@@ -25,5 +25,6 @@ int (*get_spes(const char *, int))(va_list);
 int _str(va_list);
 int _c(va_list);
 int _perc(va_list);
+int get_int(int);
 
 #endif
