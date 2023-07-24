@@ -15,8 +15,8 @@ int (*get_spes(const char *format, int index))(va_list args)
 	int i;
 
 	select ops[] = {
-		{"s", _str},
-		{"c", _c},
+		{"s", _str}, {"i", _int},
+		{"c", _c}, {"d", _int},
 		{"%", _perc},
 		{NULL, NULL},
 	};

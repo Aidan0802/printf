@@ -41,6 +41,8 @@ int _printf(const char *format, ...)
 /**
  * _perc - prints percentage
  *
+ * @args: argument list
+ *
  * Return: number of char printed
  */
 

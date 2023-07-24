@@ -20,7 +20,7 @@ typedef struct sp select;
 
 int _putchar(int c);
 int _printf(const char *format, ...);
-void print_num(int n);
+void print_int(int n);
 int (*get_spes(const char *, int))(va_list);
 int _str(va_list);
 int _c(va_list);
