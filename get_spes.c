@@ -10,10 +10,12 @@
  * otherise NULL
  */
 
+typedef struct op select;
+
 int (*get_spes(const char *format, int index))(va_list args)
 {
 	int i;
-	struct op ops[] = {
+	select ops[] = {
 		{"s", _str}, {"i", int_print},
 		{"c", _c}, {"d", int_print},
 		{"%", _perc}, {"u", un_int},
