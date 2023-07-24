@@ -3,6 +3,19 @@
 #include <stdlib.h>
 
 /**
+ * struct sp - structures specifiers
+ *
+ * @choice: different specifiers
+ * @f: function pointer
+ */
+
+typedef struct sp
+{
+	char *choice;
+	int (*f)(va_list args);
+} select;
+
+/**
  * get_spes - checks if spesifier exist
  *
  * @format: specifier

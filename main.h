@@ -3,19 +3,7 @@
 
 #include <stdarg.h>
 #include <unistd.h>
-
-/**
- * struct sp - structures specifiers
- *
- * @choice: different specifiers
- * @f: function pointer
- */
-
-typedef struct format
-{
-	char *choice;
-	int (*f)(va_list args);
-} select;
+#include <limits.h>
 
 int _putchar(int c);
 int _printf(const char *format, ...);
@@ -25,5 +13,6 @@ int _str(va_list);
 int _c(va_list);
 int _perc(va_list);
 int get_int(int);
+int un_int(va_list);
 
 #endif
