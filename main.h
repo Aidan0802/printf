@@ -6,17 +6,17 @@
 
 /**
  * struct sp - structures specifiers
+ *
  * @choice: different specifiers
  * @f: function pointer
  */
 
-struct sp
+typedef struct sp
 {
 	char *choice;
 	int (*f)(va_list args);
-};
+} select;
 
-typedef struct sp select;
 
 int _putchar(int c);
 int _printf(const char *format, ...);
