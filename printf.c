@@ -11,13 +11,13 @@
 
 int _printf(const char *format, ...)
 {
-	int i, res, count = 0;
+	int i, res, count = 0, perc_count = 0;
 	int (*speci)(va_list);
 	va_list args;
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == ' ' && format[1] == '%'))
 		return (-1);
-	if (format[0] == '%' || (format[0] == '%' && format[1] == ' '))
+	if ((format[0] == '%' && format[1] == ' '))
 		return (-1);
 
 	va_start(args, format);
@@ -25,6 +25,12 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			perc_count++;
+			if (format[i + 1] == '\0')
+			{
+				if (perc_count == 1)
+					return (-1);
+			}
 			speci = get_spes(format, i + 1);
 			if (speci)
 			{
