@@ -21,5 +21,5 @@ int _str(va_list args)
 		_putchar(str[i]);
 		count++;
 	}
-	return (count);
+	return (count - 1);
 }
