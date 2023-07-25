@@ -15,5 +15,7 @@ int _oct(va_list args)
 
        for (i = 0; num > 0; 1++)
        {
-	       oct[i] = num % 8;  
+	oct[i] = num % 8;
+	num
+
 }
