@@ -14,4 +14,5 @@ int _oct(va_list args)
 	int i, oct[10], count = 0;
 
        for (i = 0; num > 0; 1++)
+       {
 }
