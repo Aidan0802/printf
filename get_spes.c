@@ -10,8 +10,6 @@
  * otherise NULL
  */
 
-typedef struct sp select;
-
 int (*get_spes(const char *format, int index))(va_list args)
 {
 	int i;

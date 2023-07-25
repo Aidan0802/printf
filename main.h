@@ -12,6 +12,8 @@
  * @f: function pointer
  */
 
+typedef struct sp select
+
 struct sp
 {
 	char *choice;
