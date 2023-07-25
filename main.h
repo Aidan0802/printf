@@ -5,16 +5,11 @@
 #include <unistd.h>
 #include <limits.h>
 
-/**
- * struct op - specifier selecter
- * @f: function pointer to function
- */
-
-struct op
+typedef struct sp
 {
 	char *choice;
 	int (*f)(va_list args);
-};
+} select;
 
 int _putchar(int c);
 int _printf(const char *format, ...);
@@ -25,5 +20,16 @@ int _c(va_list);
 int _perc(va_list);
 int get_int(int);
 int un_int(va_list);
+int un_bin(va_list);
+int _oct(va_list);
+int hexprint(va_list);
+int heXprint(va_list);
+
+/**
+ * struct sp - structures specifiers
+ *
+ * @choice: different specifiers
+ * @f: function pointer
+ */
 
 #endif

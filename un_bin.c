@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
-* un_bin - prints binary numbers
-*
-*@args: va_ list arguments
-*
-* Return: amount characters printed
+ * un_bin - prints binary numbers
+ *
+ * @args: va_list arguments
+ *
+ * Return: amount characters printed
  */
 
 int un_bin(va_list args)
@@ -13,7 +13,7 @@ int un_bin(va_list args)
 	unsigned int x, count = 0;
 	int num, i;
 	int arr[7];
-
+	
 	num = va_arg(args, int);
 	if (num < 0)
 	{
@@ -26,10 +26,13 @@ int un_bin(va_list args)
 		count++;
 	}
 
+	for (i -= 1; i >= 0; i--)
+		if (arr[i] != 48)
+			break;
+
 	for (; i >= 0; i--)
-	{
 		_putchar(arr[i]);
-	}
+
 
 	return (count);
 }
