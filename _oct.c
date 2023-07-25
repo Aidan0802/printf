@@ -20,7 +20,7 @@ int _oct(va_list args)
        }
        for (i -= 1; i >= 0; i++)
        {
-	       _
+	       _putchar
 		 
 
 }
