@@ -17,7 +17,7 @@ int get_int(int n)
 	{
 		_putchar('-');
 		min = (unsigned int)(INT_MIN) * (-1);
-		get_int(min / 10);
+		count += get_int(min / 10) + 1;
 		_putchar(min % 10 + '0');
 	}
 	else
@@ -26,11 +26,11 @@ int get_int(int n)
 		{
 			_putchar('-');
 			n = -n;
+			count++;
 		}
 		if (n / 10)
-			get_int(n / 10);
+			count += get_int(n / 10) + 1;
 		_putchar(n % 10 + '0');
-		count++;
 	}
 	return (count);
 }

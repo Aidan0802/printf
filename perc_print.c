@@ -15,5 +15,5 @@ int _perc(va_list args)
 	if (c == '\0')
 		return (0);
 	_putchar('%');
-	return (1);
+	return (0);
 }

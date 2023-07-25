@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 				i++;
 				res = spesi(args);
 				count += res;
+				count++;
 				continue;
 			}
 		}
