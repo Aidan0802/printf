@@ -1,11 +1,31 @@
-#ifndef _MAIN_H
-#define _MAIN_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
+
+typedef struct sp
+{
+	char *choice;
+	int (*f)(va_list args);
+} select;
 
 int _putchar(int c);
 int _printf(const char *format, ...);
-void print_num(int n);
+int int_print(va_list);
+int (*get_spes(const char *, int))(va_list);
+int _str(va_list);
+int _c(va_list);
+int _perc(va_list);
+int get_int(int);
+int un_int(va_list);
+
+/**
+ * struct sp - structures specifiers
+ *
+ * @choice: different specifiers
+ * @f: function pointer
+ */
 
 #endif
