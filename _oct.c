@@ -19,6 +19,8 @@ int _oct(va_list args)
 	num /= 8;
        }
        for (i -= 1; i >= 0; i++)
+       {
+	       _
 		 
 
 }
