@@ -10,5 +10,5 @@
 int _oct(va_list args)
 {
 
-	int num = 
+	int num = va_arg 
 }
