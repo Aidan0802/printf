@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <limits.h>
 
+#define BUFFER_SIZE 1024
+
 /**
  * struct sp - choice function
  *
