@@ -10,8 +10,8 @@
 
 int un_bin(va_list args)
 {
-	unsigned int x, count = 0;
-	int num, i;
+	unsigned int x, j, count = 0;
+	int num, i, len = 0;
 	int arr[7];
 
 	num = va_arg(args, int);
@@ -19,7 +19,13 @@ int un_bin(va_list args)
 	{
 		num = INT_MIN * (num + 1);
 	}
-	for (i = 0; i < 7; i++)
+
+	j = num;
+	while (j > 0)
+		len++, j /= 2;
+
+
+	for (i = 0; i < len; i++)
 	{
 		x = 48 + ((num >> i) & 1);
 		arr[i] = x;
