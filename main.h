@@ -5,6 +5,13 @@
 #include <unistd.h>
 #include <limits.h>
 
+/**
+ * struct sp - structures specifiers
+ *
+ * @choice: different specifiers
+ * @f: function pointer
+ */
+
 typedef struct sp
 {
 	char *choice;
@@ -24,12 +31,5 @@ int un_bin(va_list);
 int _oct(va_list);
 int hexprint(va_list);
 int heXprint(va_list);
-
-/**
- * struct sp - structures specifiers
- *
- * @choice: different specifiers
- * @f: function pointer
- */
 
 #endif
