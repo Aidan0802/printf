@@ -5,6 +5,12 @@
 #include <unistd.h>
 #include <limits.h>
 
+struct sp
+{
+	char *choice;
+	int (*f)(va_list args);
+};
+
 int _putchar(int c);
 int _printf(const char *format, ...);
 int int_print(va_list);
