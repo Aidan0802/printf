@@ -5,6 +5,13 @@
 #include <unistd.h>
 #include <limits.h>
 
+/**
+ * struct sp - choice function
+ *
+ * @choice: specifier
+ * @f: function pointer
+ */
+
 struct sp
 {
 	char *choice;
