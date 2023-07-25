@@ -18,6 +18,7 @@ int _oct(va_list args)
 	oct[i] = num % 8;
 	num /= 8;
        }
-       for (i -= 
+       for (i -= 1; i
+		 
 
 }
