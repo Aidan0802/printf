@@ -16,7 +16,6 @@ int get_int(int n)
 	if (n == INT_MIN)
 	{
 		_putchar('-');
-		count++;
 		min = (unsigned int)(INT_MIN) * (-1);
 		count += get_int(min / 10) + 1;
 		_putchar(min % 10 + '0');
