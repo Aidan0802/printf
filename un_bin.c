@@ -13,7 +13,7 @@ int un_bin(va_list args)
 	unsigned int x, count = 0;
 	int num, i;
 	int arr[7];
-	
+
 	num = va_arg(args, int);
 	if (num < 0)
 	{

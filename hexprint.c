@@ -13,7 +13,7 @@ int hexprint(va_list args)
 	int hexT[16], i, num, count = 0;
 	unsigned int ui = va_arg(args, unsigned int);
 	char h[] = { 'a', 'b', 'c', 'd', 'e', 'f'};
-	
+
 	hexT[0] = ui % 16;
 	num = ui / 16;
 
@@ -27,13 +27,13 @@ int hexprint(va_list args)
 	{
 		if (hexT[i] > 9)
 		{
-		    _putchar(h[hexT[i] - 10]);
-		    count++;
+			_putchar(h[hexT[i] - 10]);
+			count++;
 		}
 		else
 		{
-		    _putchar(hexT[i] + '0');
-		    count++;
+			_putchar(hexT[i] + '0');
+			count++;
 		}
 	}
 	return (count);
@@ -52,7 +52,7 @@ int heXprint(va_list args)
 	unsigned int ui = va_arg(args, unsigned int);
 	int hexT[16], i, num, count = 0;
 	char h[] = { 'A', 'B', 'C', 'D', 'E', 'F'};
-	
+
 	hexT[0] = ui % 16;
 	num = ui / 16;
 
@@ -66,13 +66,13 @@ int heXprint(va_list args)
 	{
 		if (hexT[i] > 9)
 		{
-		    _putchar(h[hexT[i] - 10]);
-		    count++;
+			_putchar(h[hexT[i] - 10]);
+			count++;
 		}
 		else
 		{
-		    _putchar(hexT[i] + '0');
-		    count++;
+			_putchar(hexT[i] + '0');
+			count++;
 		}
 	}
 	return (count);
