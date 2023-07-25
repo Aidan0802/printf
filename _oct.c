@@ -15,5 +15,5 @@ int _oct(va_list args)
 
        for (i = 0; num > 0; 1++)
        {
-	       oct[i] = num  
+	       oct[i] = num %  
 }
