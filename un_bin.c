@@ -1,12 +1,13 @@
 #include "main.h"
 
 /**
- * un_bin - prints binary numbers
- *
- * args - va_ list arguments
- *
- * @Return: amount characters printed
+* un_bin - prints binary numbers
+*
+*@args: va_ list arguments
+*
+* Return: amount characters printed
  */
+
 int un_bin(va_list args)
 {
 	unsigned int x, count = 0;
@@ -24,7 +25,8 @@ int un_bin(va_list args)
 		arr[i] = x;
 		count++;
 	}
-	for (; i >= 0; i--);
+
+	for (; i >= 0; i--)
 	{
 		_putchar(arr[i]);
 	}
