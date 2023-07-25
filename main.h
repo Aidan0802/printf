@@ -12,13 +12,11 @@
  * @f: function pointer
  */
 
-typedef struct sp select
-
-struct sp
+typedef struct sp
 {
 	char *choice;
 	int (*f)(va_list args);
-};
+} select;
 
 int _putchar(int c);
 int _printf(const char *format, ...);
