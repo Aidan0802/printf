@@ -10,20 +10,22 @@
 
 int un_bin(va_list args)
 {
-	unsigned int x, j, count = 0;
-	int num, i, len = 0;
-	int arr[7];
-
+	unsigned int x, count = 0;
+	int num, i, len = 0, j;
+	int *arr;
+	
 	num = va_arg(args, int);
+	arr = malloc(sizeof(*arr) + num);
+	if (arr == NULL)
+		return (-1);
+
 	if (num < 0)
 	{
 		num = INT_MIN * (num + 1);
 	}
-
 	j = num;
 	while (j > 0)
 		len++, j /= 2;
-
 
 	for (i = 0; i < len; i++)
 	{
@@ -39,6 +41,6 @@ int un_bin(va_list args)
 	for (; i >= 0; i--)
 		_putchar(arr[i]);
 
-
+	free(arr);
 	return (count);
 }
