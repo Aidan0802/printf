@@ -12,7 +12,7 @@
 int _oct(va_list args)
 {
 	unsigned int ui = va_arg(args, unsigned int);
-	int i, num, oct[11], count = 0;
+	int i, num, oct[11], count = -1;
 
 	oct[0] = ui % 8;
 	num = ui / 8;

@@ -10,7 +10,7 @@
 
 int hexprint(va_list args)
 {
-	int hexT[16], i, num, count = 0;
+	int hexT[16], i, num, count = -1;
 	unsigned int ui = va_arg(args, unsigned int);
 	char h[] = { 'a', 'b', 'c', 'd', 'e', 'f'};
 
@@ -50,7 +50,7 @@ int hexprint(va_list args)
 int heXprint(va_list args)
 {
 	unsigned int ui = va_arg(args, unsigned int);
-	int hexT[16], i, num, count = 0;
+	int hexT[16], i, num, count = -1;
 	char h[] = { 'A', 'B', 'C', 'D', 'E', 'F'};
 
 	hexT[0] = ui % 16;
