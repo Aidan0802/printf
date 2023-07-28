@@ -6,6 +6,8 @@
 #include <limits.h>
 #include <stdlib.h>
 
+#define BUFFER_SIZE 1024
+
 /**
  * struct sp - structures specifiers
  *
@@ -32,5 +34,6 @@ int un_bin(va_list);
 int _oct(va_list);
 int hexprint(va_list);
 int heXprint(va_list);
+int s_char(va_list);
 
 #endif

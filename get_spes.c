@@ -14,7 +14,7 @@ int (*get_spes(const char *format, int index))(va_list args)
 {
 	int i;
 	struct sp ops[] = {
-		{"s", _str}, {"i", int_print}, {"o", _oct},
+		{"s", _str}, {"i", int_print}, {"o", _oct}, {"S", s_char},
 		{"c", _c}, {"d", int_print}, {"x", hexprint},
 		{"%", _perc}, {"u", un_int}, {"X", heXprint},
 		{"b", un_bin}, {NULL, NULL}
