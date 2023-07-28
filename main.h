@@ -4,21 +4,20 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <limits.h>
-
-#define BUFFER_SIZE 1024
+#include <stdlib.h>
 
 /**
- * struct sp - choice function
+ * struct sp - structures specifiers
  *
- * @choice: specifier
+ * @choice: different specifiers
  * @f: function pointer
  */
 
-struct sp
+typedef struct sp
 {
 	char *choice;
-	int (*f)(va_list args);
-};
+	int (*f)();
+} select;
 
 int _putchar(int c);
 int _printf(const char *format, ...);
