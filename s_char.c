@@ -23,6 +23,6 @@ int s_char(va_list args)
 			_putchar(str[i]), count++;
 	}
 	if (count == -1)
-		return (0);
+		return (-1);
 	return (count);
 }
