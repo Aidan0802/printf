@@ -10,37 +10,33 @@
 
 int un_bin(va_list args)
 {
-	unsigned int x, count = 0;
-	int num, i, len = 0, j;
-	int *arr;
-	
-	num = va_arg(args, int);
-	arr = malloc(sizeof(*arr) + num);
-	if (arr == NULL)
-		return (-1);
+	unsigned int num = va_arg(args, unsigned int);
+	unsigned int count = 0;
 
-	if (num < 0)
+	count += print_bin(num);
+
+	return (count);
+}
+
+/**
+ * print_bin - prints binary in reverse
+ *
+ * @n: number input
+ * Return: Amount printed
+ */
+
+int print_bin(int n)
+{
+	int count = 0;
+
+	if (n > 0)
 	{
-		num = INT_MIN * (num + 1);
+		if (n > 1)
+			count += 1 + print_bin(n >> 1);
+		_putchar(48 + (n & 1));
 	}
-	j = num;
-	while (j > 0)
-		len++, j /= 2;
+	else
+		_putchar('0'), count++;
 
-	for (i = 0; i < len; i++)
-	{
-		x = 48 + ((num >> i) & 1);
-		arr[i] = x;
-		count++;
-	}
-
-	for (i -= 1; i >= 0; i--)
-		if (arr[i] != 48)
-			break;
-
-	for (; i >= 0; i--)
-		_putchar(arr[i]);
-
-	free(arr);
 	return (count);
 }
