@@ -31,7 +31,7 @@ int _perc(va_list);
 int get_int(int);
 int un_int(va_list);
 int un_bin(va_list);
-int print_bin(unsigned long int);
+int print_bin(unsigned long int num);
 int _oct(va_list);
 int hexprint(va_list);
 int heXprint(va_list);
