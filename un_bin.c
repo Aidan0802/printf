@@ -10,8 +10,8 @@
 
 int un_bin(va_list args)
 {
-	unsigned int num = va_arg(args, unsigned int);
-	unsigned int count = 0;
+	unsigned long int num = va_arg(args, unsigned int);
+	unsigned long int count = 0;
 
 	count += print_bin(num);
 
@@ -25,7 +25,7 @@ int un_bin(va_list args)
  * Return: Amount printed
  */
 
-int print_bin(int n)
+int print_bin(unsigned long int n)
 {
 	int count = 0;
 
