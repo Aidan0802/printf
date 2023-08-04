@@ -36,7 +36,7 @@ int print_bin(unsigned long int n)
 		_putchar(48 + (n & 1));
 	}
 	else
-		_putchar('0'), count++;
+		_putchar('0');
 
 	return (count);
 }
